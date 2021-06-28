@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>43159662804-6jldbuv35uciflam8o6rvv0367ceafp0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.43159662804-6jldbuv35uciflam8o6rvv0367ceafp0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDOjdXpXkJFDiceJupok5MgQ70ByBD8mcM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>43159662804</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.SerhiyZhlonko.www.carRental</string>
+	<key>PROJECT_ID</key>
+	<string>carrental-ea250</string>
+	<key>STORAGE_BUCKET</key>
+	<string>carrental-ea250.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:43159662804:ios:b5c46bd451cb5cc41ecb41</string>
+</dict>
+</plist>
