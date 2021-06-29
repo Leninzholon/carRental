@@ -72,7 +72,13 @@
                             <constraint firstItem="u6T-u2-McJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pUb-LJ-5Lg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Car rental" id="VjC-Tf-ms3"/>
+                    <navigationItem key="navigationItem" title="Car rental" id="VjC-Tf-ms3">
+                        <barButtonItem key="rightBarButtonItem" title="LogOut" id="YcC-BO-79N">
+                            <connections>
+                                <action selector="singOut:" destination="BYZ-38-t0r" id="0bK-pI-AQO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="gLd-42-5eN" id="dVi-R4-5H6"/>
                         <segue destination="1Et-dQ-943" kind="show" identifier="carRental" id="yU9-0y-hsZ"/>
@@ -453,6 +459,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxj-qs-KDj">
                                 <rect key="frame" x="41" y="134" width="332" height="45.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -462,9 +469,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ys9-mV-0Kh">
-                                <rect key="frame" x="41" y="203" width="332" height="45.5"/>
+                                <rect key="frame" x="41" y="203" width="332" height="44"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="CornerRadius" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -481,7 +489,16 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButton:" destination="afB-Ov-Fig" eventType="touchUpInside" id="y9q-EN-2ek"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P50-Hd-JZu">
+                                <rect key="frame" x="20" y="290" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hS1-CC-nml"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -493,14 +510,18 @@
                             <constraint firstItem="oxj-qs-KDj" firstAttribute="top" secondItem="hS1-CC-nml" secondAttribute="top" constant="46" id="NI2-OB-Bqf"/>
                             <constraint firstItem="oxj-qs-KDj" firstAttribute="leading" secondItem="hS1-CC-nml" secondAttribute="leading" constant="41" id="QkD-nr-Vfl"/>
                             <constraint firstItem="hS1-CC-nml" firstAttribute="trailing" secondItem="Ys9-mV-0Kh" secondAttribute="trailing" constant="41" id="YBs-Xx-W7z"/>
+                            <constraint firstItem="P50-Hd-JZu" firstAttribute="top" secondItem="Ys9-mV-0Kh" secondAttribute="bottom" constant="43" id="bJJ-83-U6Q"/>
                             <constraint firstItem="hS1-CC-nml" firstAttribute="bottom" secondItem="H8l-F1-sMG" secondAttribute="bottom" constant="81" id="gDp-Eg-dMG"/>
+                            <constraint firstItem="hS1-CC-nml" firstAttribute="trailing" secondItem="P50-Hd-JZu" secondAttribute="trailing" constant="20" id="gYm-7Z-JPr"/>
                             <constraint firstItem="hS1-CC-nml" firstAttribute="trailing" secondItem="H8l-F1-sMG" secondAttribute="trailing" constant="41" id="sCd-ZI-o0R"/>
+                            <constraint firstItem="P50-Hd-JZu" firstAttribute="leading" secondItem="hS1-CC-nml" secondAttribute="leading" constant="20" id="wnQ-db-ZSh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="chc-8t-FXW"/>
                     <connections>
-                        <outlet property="emailTextField" destination="oxj-qs-KDj" id="7jH-mO-dPV"/>
-                        <outlet property="passwordTextField" destination="Ys9-mV-0Kh" id="Aid-Uk-mvr"/>
+                        <outlet property="emailTF" destination="oxj-qs-KDj" id="Jmi-1V-Wz8"/>
+                        <outlet property="errorLable" destination="P50-Hd-JZu" id="xe9-2C-zfc"/>
+                        <outlet property="passwordTF" destination="Ys9-mV-0Kh" id="85t-GG-Rxh"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Register" id="c6Z-DQ-oUP"/>
                     </connections>
                 </viewController>
@@ -516,9 +537,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wr6-1s-tus">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@2.com" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wr6-1s-tus">
                                 <rect key="frame" x="41" y="134" width="332" height="45.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -527,10 +549,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKz-kz-Bd5">
-                                <rect key="frame" x="41" y="203" width="332" height="45.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKz-kz-Bd5">
+                                <rect key="frame" x="41" y="203" width="332" height="44"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="CornerRadius" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -547,7 +570,16 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButton:" destination="aY7-8k-JSG" eventType="touchUpInside" id="Cx6-sm-WeO"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nos-Qi-kgX">
+                                <rect key="frame" x="20" y="271" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fbU-Wg-L3h"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -555,8 +587,11 @@
                             <constraint firstItem="wr6-1s-tus" firstAttribute="top" secondItem="fbU-Wg-L3h" secondAttribute="top" constant="46" id="1vP-DK-fOc"/>
                             <constraint firstItem="fbU-Wg-L3h" firstAttribute="trailing" secondItem="LWc-iH-YfO" secondAttribute="trailing" constant="41" id="4qT-K5-tJ8"/>
                             <constraint firstItem="VKz-kz-Bd5" firstAttribute="leading" secondItem="fbU-Wg-L3h" secondAttribute="leading" constant="41" id="FTt-DG-TEs"/>
+                            <constraint firstItem="fbU-Wg-L3h" firstAttribute="trailing" secondItem="nos-Qi-kgX" secondAttribute="trailing" constant="20" id="Iqg-3z-Oxa"/>
                             <constraint firstItem="fbU-Wg-L3h" firstAttribute="bottom" secondItem="LWc-iH-YfO" secondAttribute="bottom" constant="81" id="KPK-Vs-g26"/>
+                            <constraint firstItem="nos-Qi-kgX" firstAttribute="top" secondItem="VKz-kz-Bd5" secondAttribute="bottom" constant="24" id="S3B-yt-cFH"/>
                             <constraint firstItem="wr6-1s-tus" firstAttribute="leading" secondItem="fbU-Wg-L3h" secondAttribute="leading" constant="41" id="Wki-Mg-It9"/>
+                            <constraint firstItem="nos-Qi-kgX" firstAttribute="leading" secondItem="fbU-Wg-L3h" secondAttribute="leading" constant="20" id="X35-Qx-8eN"/>
                             <constraint firstItem="LWc-iH-YfO" firstAttribute="leading" secondItem="fbU-Wg-L3h" secondAttribute="leading" constant="41" id="XVa-DY-F6l"/>
                             <constraint firstItem="fbU-Wg-L3h" firstAttribute="trailing" secondItem="wr6-1s-tus" secondAttribute="trailing" constant="41" id="fXe-mg-LPr"/>
                             <constraint firstItem="fbU-Wg-L3h" firstAttribute="trailing" secondItem="VKz-kz-Bd5" secondAttribute="trailing" constant="41" id="jVv-s3-Yyn"/>
@@ -565,8 +600,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="8fS-fy-fjE"/>
                     <connections>
-                        <outlet property="emailTextField" destination="wr6-1s-tus" id="Uoz-42-KSx"/>
-                        <outlet property="passwordTextField" destination="VKz-kz-Bd5" id="wzm-pM-I5u"/>
+                        <outlet property="emailTF" destination="wr6-1s-tus" id="XDU-jz-w11"/>
+                        <outlet property="errorLable" destination="nos-Qi-kgX" id="bwL-dq-u3K"/>
+                        <outlet property="passwordTF" destination="VKz-kz-Bd5" id="5H0-ng-OLn"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="tHB-dt-QuA"/>
                     </connections>
                 </viewController>
@@ -595,7 +631,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tHB-dt-QuA"/>
+        <segue reference="c6Z-DQ-oUP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="1680" height="913"/>
@@ -607,6 +643,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

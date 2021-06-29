@@ -15,6 +15,7 @@
 		4A46D0FB2689B8D800A6E103 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46D0FA2689B8D800A6E103 /* RegisterController.swift */; };
 		4A46D0FD2689B90000A6E103 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46D0FC2689B90000A6E103 /* LoginController.swift */; };
 		4A5512892688F12A0036A713 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5512882688F12A0036A713 /* FirebaseAuth */; };
+		4A8892C1268A181800FD4E62 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8892C0268A181800FD4E62 /* Constants.swift */; };
 		4AD1709226886D3E00C47EEC /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1709126886D3E00C47EEC /* OrderController.swift */; };
 		4AE1049F2686E8A000DB3A63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1049E2686E8A000DB3A63 /* AppDelegate.swift */; };
 		4AE104A12686E8A000DB3A63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE104A02686E8A000DB3A63 /* SceneDelegate.swift */; };
@@ -33,6 +34,7 @@
 		4A46D0F52689B30B00A6E103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A46D0FA2689B8D800A6E103 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		4A46D0FC2689B90000A6E103 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		4A8892C0268A181800FD4E62 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4AD1709126886D3E00C47EEC /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		4AE1049B2686E8A000DB3A63 /* carRental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carRental.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE1049E2686E8A000DB3A63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				4AE1049E2686E8A000DB3A63 /* AppDelegate.swift */,
 				4AE104A02686E8A000DB3A63 /* SceneDelegate.swift */,
+				4A8892C0268A181800FD4E62 /* Constants.swift */,
 			);
 			path = SupportFile;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				4A460E94268759B900552B44 /* ForCellModel.swift in Sources */,
 				4AF59635268791BB009226D1 /* CaraDetaileControllerViewController.swift in Sources */,
 				4AE104A12686E8A000DB3A63 /* SceneDelegate.swift in Sources */,
+				4A8892C1268A181800FD4E62 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

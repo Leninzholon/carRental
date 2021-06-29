@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
@@ -17,11 +18,20 @@ class MainViewController: UIViewController {
     private let userActions = UserAction.allCases
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.hidesBackButton = true
 
     }
-
-// MARK: Navigation
+    // MARK: Navigation
+    @IBAction func singOut(_ sender: UIBarButtonItem) {
+        let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+        navigationController?.popToRootViewController(animated: true)
+    } catch let signOutError as NSError {
+      print ("Error signing out: %@", signOutError)
+    }
+    }
+   
     
 // Mark: Extension
 }
