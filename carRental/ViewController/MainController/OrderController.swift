@@ -11,7 +11,8 @@ import Firebase
 class OrderController: UITableViewController {
     var orderCara: [ForCellModel]!
     var orderCars: [ForCellModel] = []
-    
+    var database : Firestore!
+    var idArray = [String]()
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,15 @@ class OrderController: UITableViewController {
     func loadCars() {
         
         db.collection(Constants.FireBase.collectionNameOrder).addSnapshotListener { (querySnapshot, err) in
+            if let snapshot = querySnapshot?.documents {
+            for document in snapshot {
+
+              if document == document {
+                let newElement = document.documentID
+                self.idArray.append(newElement)
+                 }
+                   }
+            }
             self.orderCars = []
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -37,9 +47,7 @@ class OrderController: UITableViewController {
                             
                             self.orderCars.append(newCar)
                             self.sortForCurrentUser()
-                            //                            let currentSum = self.sumPrice(prices: self.orderCars)
-                            //                            underTable = ForCellModel(name: "All Price", price: currentSum, user: user, isReserve: false)
-                            //                            self.orderCars.append(underTable)
+                           
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
@@ -63,8 +71,7 @@ class OrderController: UITableViewController {
             if let user = Auth.auth().currentUser?.email
             {
                 db.collection(nameCollection).addDocument(data: [Constants.FireBase.senderFS: user, Constants.FireBase.modelFS: model, Constants.FireBase.priceFS: price,
-                                                                 Constants.FireBase.reserveFS:
-                                                                    isReserve]) {
+                    Constants.FireBase.reserveFS: isReserve]) {
                     (error) in
                     
                     if let e = error {
@@ -114,31 +121,20 @@ class OrderController: UITableViewController {
         }
         
     }
+   
     
     @IBAction func censelAction(_ sender: UIBarButtonItem) {
-        if let indexPath = tableView.indexPathForSelectedRow {
-            print("indexPath: \(indexPath.row)")
-            let updateReference = self.db.collection(Constants.FireBase.collectionNameOrder).document(String(indexPath.row))
-            updateReference.getDocument { (document, err) in
-                if let err = err {
-                    print(err.localizedDescription)
-                }
-                else {
-                    document?.reference.updateData([
-                        Constants.FireBase.reserveFS: false
-                        
-                    ])
-                }
-            }
-            db.collection(Constants.FireBase.collectionNameOrder).document().delete() { err in
+        print(idArray)
+        for id in idArray {
+            db.collection(Constants.FireBase.collectionNameOrder).document(id).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
                 } else {
+                    self.tableView.reloadData()
                     print("Document successfully removed!")
                 }
             }
         }
+        
     }
-    
-    
 }

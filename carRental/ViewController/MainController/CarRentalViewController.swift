@@ -121,7 +121,8 @@ class CarRentalViewController: UITableViewController {
                         else {
                             document?.reference.updateData([
                                 Constants.FireBase.reserveFS: true
-                                ])
+                            ])
+                            
                         }
                     }
             let newElement = self.dateCars[indexPath.row]
