@@ -10,7 +10,7 @@ import Firebase
 
 class MainViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
-    enum UserAction: String,CaseIterable {
+    enum UserAction: String, CaseIterable {
         case pontOne   = "About us"
         case pontTwo = "Car rental"
         case pontTree = "Your order"

@@ -10,8 +10,11 @@ import UIKit
 struct ForCellModel {
     let name: String
     let price: Double
+    let user: String?
     var priceString: String{
         return "\(price)"
     }
-    let image: UIImage
+    var isReserve: Bool
+    
+    
 }

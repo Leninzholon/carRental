@@ -15,6 +15,7 @@
 		4A46D0FB2689B8D800A6E103 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46D0FA2689B8D800A6E103 /* RegisterController.swift */; };
 		4A46D0FD2689B90000A6E103 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46D0FC2689B90000A6E103 /* LoginController.swift */; };
 		4A5512892688F12A0036A713 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4A5512882688F12A0036A713 /* FirebaseAuth */; };
+		4A6ACC91268DC3CC00902B38 /* CarRentalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6ACC90268DC3CC00902B38 /* CarRentalViewController.swift */; };
 		4A8892C1268A181800FD4E62 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8892C0268A181800FD4E62 /* Constants.swift */; };
 		4AD1709226886D3E00C47EEC /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1709126886D3E00C47EEC /* OrderController.swift */; };
 		4AE1049F2686E8A000DB3A63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1049E2686E8A000DB3A63 /* AppDelegate.swift */; };
@@ -24,8 +25,8 @@
 		4AE104A92686E8A000DB3A63 /* carRental.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AE104A72686E8A000DB3A63 /* carRental.xcdatamodeld */; };
 		4AE104AB2686E8A600DB3A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE104AA2686E8A600DB3A63 /* Assets.xcassets */; };
 		4AE104AE2686E8A600DB3A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE104AC2686E8A600DB3A63 /* LaunchScreen.storyboard */; };
-		4AE104B726872AF800DB3A63 /* CarRentalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE104B626872AF800DB3A63 /* CarRentalViewController.swift */; };
 		4AF59635268791BB009226D1 /* CaraDetaileControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF59634268791BB009226D1 /* CaraDetaileControllerViewController.swift */; };
+		4AFBD8EA269045F400638BE6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AFBD8E9269045F400638BE6 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4A46D0F52689B30B00A6E103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A46D0FA2689B8D800A6E103 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		4A46D0FC2689B90000A6E103 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		4A6ACC90268DC3CC00902B38 /* CarRentalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRentalViewController.swift; sourceTree = "<group>"; };
 		4A8892C0268A181800FD4E62 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4AD1709126886D3E00C47EEC /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		4AE1049B2686E8A000DB3A63 /* carRental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carRental.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +47,6 @@
 		4AE104AA2686E8A600DB3A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AE104AD2686E8A600DB3A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AE104AF2686E8A600DB3A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AE104B626872AF800DB3A63 /* CarRentalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentalViewController.swift; sourceTree = "<group>"; };
 		4AF59634268791BB009226D1 /* CaraDetaileControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaraDetaileControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A46D0F82689B45A00A6E103 /* FirebaseFirestore in Frameworks */,
+				4AFBD8EA269045F400638BE6 /* IQKeyboardManagerSwift in Frameworks */,
 				4A46D0F22689B23300A6E103 /* FirebaseAnalytics in Frameworks */,
 				4A5512892688F12A0036A713 /* FirebaseAuth in Frameworks */,
 			);
@@ -91,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				4AE104A22686E8A000DB3A63 /* MainViewController.swift */,
-				4AE104B626872AF800DB3A63 /* CarRentalViewController.swift */,
+				4A6ACC90268DC3CC00902B38 /* CarRentalViewController.swift */,
 				4A460E902687576400552B44 /* AutoViewCell.swift */,
 				4AF59634268791BB009226D1 /* CaraDetaileControllerViewController.swift */,
 				4AD1709126886D3E00C47EEC /* OrderController.swift */,
@@ -120,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				4A460E922687598E00552B44 /* Model */,
-				4AE104B526872AC600DB3A63 /* ViewController */,
 				4AE104B826872B2B00DB3A63 /* View */,
+				4AE104B526872AC600DB3A63 /* ViewController */,
 				4AE104AA2686E8A600DB3A63 /* Assets.xcassets */,
 				4AE104B926872B5200DB3A63 /* SupportFile */,
 				4AE104AF2686E8A600DB3A63 /* Info.plist */,
@@ -179,6 +181,7 @@
 				4A5512882688F12A0036A713 /* FirebaseAuth */,
 				4A46D0F12689B23300A6E103 /* FirebaseAnalytics */,
 				4A46D0F72689B45A00A6E103 /* FirebaseFirestore */,
+				4AFBD8E9269045F400638BE6 /* IQKeyboardManagerSwift */,
 			);
 			productName = carRental;
 			productReference = 4AE1049B2686E8A000DB3A63 /* carRental.app */;
@@ -209,6 +212,7 @@
 			mainGroup = 4AE104922686E8A000DB3A63;
 			packageReferences = (
 				4A5512872688F12A0036A713 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4AFBD8E8269045F300638BE6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 4AE1049C2686E8A000DB3A63 /* Products */;
 			projectDirPath = "";
@@ -245,11 +249,11 @@
 				4AE104A92686E8A000DB3A63 /* carRental.xcdatamodeld in Sources */,
 				4AD1709226886D3E00C47EEC /* OrderController.swift in Sources */,
 				4A460E912687576400552B44 /* AutoViewCell.swift in Sources */,
-				4AE104B726872AF800DB3A63 /* CarRentalViewController.swift in Sources */,
 				4A460E94268759B900552B44 /* ForCellModel.swift in Sources */,
 				4AF59635268791BB009226D1 /* CaraDetaileControllerViewController.swift in Sources */,
 				4AE104A12686E8A000DB3A63 /* SceneDelegate.swift in Sources */,
 				4A8892C1268A181800FD4E62 /* Constants.swift in Sources */,
+				4A6ACC91268DC3CC00902B38 /* CarRentalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +465,14 @@
 				minimumVersion = 8.2.0;
 			};
 		};
+		4AFBD8E8269045F300638BE6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -478,6 +490,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A5512872688F12A0036A713 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		4AFBD8E9269045F400638BE6 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AFBD8E8269045F300638BE6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

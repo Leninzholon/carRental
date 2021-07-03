@@ -17,7 +17,7 @@ class CaraDetaileControllerViewController: UIViewController {
 
         priceLable.text = carDetaile.priceString + "$ "
         nameCarLabel.text = carDetaile.name
-        imageView.image = carDetaile.image
+        imageView.image = UIImage(named: carDetaile.name)
     }
     
 

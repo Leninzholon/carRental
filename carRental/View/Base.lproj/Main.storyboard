@@ -213,7 +213,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="25d-DE-6dH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cfx-4C-h3C">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" id="Cfx-4C-h3C">
                             <connections>
                                 <action selector="goToOrder:" destination="1Et-dQ-943" id="ccO-fV-GwG"/>
                                 <segue destination="9BH-TU-62Y" kind="show" identifier="orderCell" id="Dcp-VZ-5CM"/>
@@ -266,7 +266,16 @@
                             <outlet property="delegate" destination="9BH-TU-62Y" id="Wxn-qc-faU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Tzg-x1-Fbo"/>
+                    <navigationItem key="navigationItem" id="Tzg-x1-Fbo">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="creditcard.fill" catalog="system" id="BrM-hn-BOx"/>
+                            <barButtonItem image="xmark.circle.fill" catalog="system" id="EkN-Zw-Bap">
+                                <connections>
+                                    <action selector="censelAction:" destination="9BH-TU-62Y" id="uMP-xt-WRH"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cS1-OK-uih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -634,7 +643,10 @@
         <segue reference="c6Z-DQ-oUP"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="creditcard.fill" catalog="system" width="128" height="88"/>
         <image name="logo" width="1680" height="913"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="BackgroundColor">
             <color red="0.86299997568130493" green="0.86799997091293335" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
