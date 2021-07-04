@@ -49,8 +49,8 @@ class CarRentalViewController: UITableViewController {
     func isReserve(_ cell: UITableViewCell, isReserve: Bool)  {
         cell.accessoryType = isReserve ? .checkmark : .none
     }
-    func addListToDb(addArray: [ForCellModel], nameCollection: String) {
-        for order in addArray {
+    func addListToDb(  nameCollection: String) {
+        for order in orderCars {
             
             let model = order.name
             let price = order.price
@@ -59,7 +59,7 @@ class CarRentalViewController: UITableViewController {
             {
                 db.collection(nameCollection).addDocument(data: [Constants.FireBase.senderFS: user, Constants.FireBase.modelFS: model, Constants.FireBase.priceFS: price,
                                                                  Constants.FireBase.reserveFS:
-                                                            isReserve]) {
+                                                                    isReserve]) {
                     (error) in
                     
                     if let e = error {
@@ -70,9 +70,10 @@ class CarRentalViewController: UITableViewController {
                 }
             }
         }
+        orderCars = []
     }
     func loadCars() {
-       
+        
         db.collection(Constants.FireBase.collectionName).addSnapshotListener { (querySnapshot, err) in
             self.dateCars = []
             if let err = err {
@@ -86,7 +87,7 @@ class CarRentalViewController: UITableViewController {
                         {
                             let newCar = ForCellModel(name: model, price: price, user: nil, isReserve: isReserve)
                             
-                           
+                            
                             self.dateCars.append(newCar)
                             
                             DispatchQueue.main.async {
@@ -102,7 +103,7 @@ class CarRentalViewController: UITableViewController {
         
         
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85.0
     }
@@ -114,17 +115,19 @@ class CarRentalViewController: UITableViewController {
             
             
             let updateReference = self.db.collection(Constants.FireBase.collectionName).document(String(indexPath.row))
-                    updateReference.getDocument { (document, err) in
-                        if let err = err {
-                            print(err.localizedDescription)
-                        }
-                        else {
-                            document?.reference.updateData([
-                                Constants.FireBase.reserveFS: true
-                            ])
-                            
-                        }
+            updateReference.getDocument { (document, err) in
+                if let err = err {
+                    print(err.localizedDescription)
+                }
+                else {
+                    if let user = Auth.auth().currentUser?.email{
+                        document?.reference.updateData([
+                            Constants.FireBase.senderFS: user,
+                            Constants.FireBase.reserveFS: true
+                        ])
                     }
+                }
+            }
             let newElement = self.dateCars[indexPath.row]
             
             self.orderCars.append(newElement)
@@ -151,13 +154,13 @@ class CarRentalViewController: UITableViewController {
         if segue.identifier == "orderCell"{
             let orderVC = segue.destination as! OrderController
             orderVC.orderCara = orderCars
-            addListToDb(addArray: orderCars, nameCollection: Constants.FireBase.collectionNameOrder)
+            addListToDb( nameCollection: Constants.FireBase.collectionNameOrder)
         } else {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let detaileVC = segue.destination as! CaraDetaileControllerViewController
                 detaileVC.carDetaile = dateCars[indexPath.row]
-                
-                
+
+
             }
         }
         

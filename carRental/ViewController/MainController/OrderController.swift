@@ -16,26 +16,27 @@ class OrderController: UITableViewController {
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.reloadData()
         loadCars()
+        
     }
     func loadCars() {
         
         db.collection(Constants.FireBase.collectionNameOrder).addSnapshotListener { (querySnapshot, err) in
             if let snapshot = querySnapshot?.documents {
-            for document in snapshot {
-
-              if document == document {
-                let newElement = document.documentID
-                self.idArray.append(newElement)
-                 }
-                   }
+                for document in snapshot {
+                    
+                    if document == document {
+                        let newElement = document.documentID
+                        self.idArray.append(newElement)
+                    }
+                }
             }
             self.orderCars = []
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 if let snapshotDocuments = querySnapshot?.documents{
-                    var underTable: ForCellModel
                     for doc in snapshotDocuments{
                         let data = doc.data()
                         if let model = data[Constants.FireBase.modelFS] as? String, let price = data[Constants.FireBase.priceFS] as? Double,
@@ -47,7 +48,7 @@ class OrderController: UITableViewController {
                             
                             self.orderCars.append(newCar)
                             self.sortForCurrentUser()
-                           
+                            
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
@@ -71,7 +72,7 @@ class OrderController: UITableViewController {
             if let user = Auth.auth().currentUser?.email
             {
                 db.collection(nameCollection).addDocument(data: [Constants.FireBase.senderFS: user, Constants.FireBase.modelFS: model, Constants.FireBase.priceFS: price,
-                    Constants.FireBase.reserveFS: isReserve]) {
+                                                                 Constants.FireBase.reserveFS: isReserve]) {
                     (error) in
                     
                     if let e = error {
@@ -101,7 +102,6 @@ class OrderController: UITableViewController {
         cell.imageView?.image = UIImage(named: currentOrders.name)
         cell.detailTextLabel?.text = currentOrders.priceString
         
-        
         return cell
     }
     func sumPrice(prices: [ForCellModel]) -> Double {
@@ -121,10 +121,11 @@ class OrderController: UITableViewController {
         }
         
     }
-   
     
-    @IBAction func censelAction(_ sender: UIBarButtonItem) {
-        print(idArray)
+    
+    @IBAction func censelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
         for id in idArray {
             db.collection(Constants.FireBase.collectionNameOrder).document(id).delete() { err in
                 if let err = err {
@@ -136,5 +137,25 @@ class OrderController: UITableViewController {
             }
         }
         
+        for item in 0...2 {
+            let updateReference = self.db.collection(Constants.FireBase.collectionName).document(String(item))
+            updateReference.getDocument { (document, err) in
+                if let err = err {
+                    print(err.localizedDescription)
+                }
+                else {
+                    let user = document?.data()![Constants.FireBase.senderFS] as? String
+                    if Auth.auth().currentUser?.email == user{
+                        
+                        document?.reference.updateData([
+                            
+                            Constants.FireBase.reserveFS: false
+                            
+                        ])
+                    }
+                }
+            }
+        }
     }
 }
+

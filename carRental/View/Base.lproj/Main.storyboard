@@ -271,7 +271,7 @@
                             <barButtonItem title="Item" image="creditcard.fill" catalog="system" id="BrM-hn-BOx"/>
                             <barButtonItem image="xmark.circle.fill" catalog="system" id="EkN-Zw-Bap">
                                 <connections>
-                                    <action selector="censelAction:" destination="9BH-TU-62Y" id="uMP-xt-WRH"/>
+                                    <action selector="censelAction:" destination="9BH-TU-62Y" id="Fr7-X1-whq"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
