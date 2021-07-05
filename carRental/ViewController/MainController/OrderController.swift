@@ -12,7 +12,7 @@ class OrderController: UITableViewController {
     var orderCara: [ForCellModel]!
     var orderCars: [ForCellModel] = []
     var database : Firestore!
-    var idArray = [String]()
+    var idArray: [String] = []
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,9 @@ class OrderController: UITableViewController {
         db.collection(Constants.FireBase.collectionNameOrder).addSnapshotListener { (querySnapshot, err) in
             if let snapshot = querySnapshot?.documents {
                 for document in snapshot {
-                    
-                    if document == document {
+                    let data = document.data()
+                    let user =  data[Constants.FireBase.senderFS] as! String
+                    if Auth.auth().currentUser!.email == user{
                         let newElement = document.documentID
                         self.idArray.append(newElement)
                     }
@@ -123,8 +124,8 @@ class OrderController: UITableViewController {
     }
     
     
-    @IBAction func censelAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func canselAction(_ sender: Any) {
+       
         
         for id in idArray {
             db.collection(Constants.FireBase.collectionNameOrder).document(id).delete() { err in

@@ -14,4 +14,5 @@ class AutoViewCell: UITableViewCell {
     
     @IBOutlet weak var imageAutoView: UIImageView!
     
+    @IBOutlet weak var reservedImage: UIImageView!
 }

@@ -9,13 +9,15 @@ import UIKit
 import Firebase
 
 class CarRentalViewController: UITableViewController {
-    
+   
+  
     let db = Firestore.firestore()
     var orderCars = [ForCellModel]()
     var dateCars: [ForCellModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadCars()
         
     }
@@ -32,6 +34,12 @@ class CarRentalViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath) as! AutoViewCell
+        if dateCars[indexPath.row].isReserve{
+            cell.reservedImage.alpha = 1
+        } else {
+            cell.reservedImage.alpha = 0
+        }
+        
         cell.nameLable.textColor = UIColor.init(named: "cellTextColor")
         cell.nameLable.shadowColor = UIColor.init(named: "cellTextColor")
         cell.priceLable.textColor = UIColor.init(named: "cellTextColor")
