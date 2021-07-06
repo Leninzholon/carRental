@@ -167,7 +167,7 @@ class CarRentalViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow{
                 let detaileVC = segue.destination as! CaraDetaileControllerViewController
                 detaileVC.carDetaile = dateCars[indexPath.row]
-
+                detaileVC.currentRatingId = String(indexPath.row)
 
             }
         }

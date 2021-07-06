@@ -16,5 +16,7 @@ struct Constants {
         static let modelFS = "model"
         static let priceFS = "price"
         static let reserveFS = "isReserve"
+        static let ratingFS = "rating"
+
     }
 }

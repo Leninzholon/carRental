@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     enum UserAction: String, CaseIterable {
         case pontOne   = "About us"
         case pontTwo = "Car rental"
-        case pontTree = "Your order"
+        case pontTree = "Сontacts"
     }
     private let userActions = UserAction.allCases
     override func viewDidLoad() {

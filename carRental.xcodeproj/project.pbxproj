@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1209AE26946A7A00D4299D /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 4A1209AD26946A7A00D4299D /* Cosmos */; };
 		4A460E912687576400552B44 /* AutoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A460E902687576400552B44 /* AutoViewCell.swift */; };
 		4A460E94268759B900552B44 /* ForCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A460E93268759B900552B44 /* ForCellModel.swift */; };
 		4A46D0F22689B23300A6E103 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A46D0F12689B23300A6E103 /* FirebaseAnalytics */; };
@@ -25,6 +26,7 @@
 		4AE104A92686E8A000DB3A63 /* carRental.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AE104A72686E8A000DB3A63 /* carRental.xcdatamodeld */; };
 		4AE104AB2686E8A600DB3A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE104AA2686E8A600DB3A63 /* Assets.xcassets */; };
 		4AE104AE2686E8A600DB3A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE104AC2686E8A600DB3A63 /* LaunchScreen.storyboard */; };
+		4AEE09412694D9AD0077CFB5 /* ContactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEE09402694D9AD0077CFB5 /* ContactsController.swift */; };
 		4AF59635268791BB009226D1 /* CaraDetaileControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF59634268791BB009226D1 /* CaraDetaileControllerViewController.swift */; };
 		4AFBD8EA269045F400638BE6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4AFBD8E9269045F400638BE6 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,7 @@
 		4AE104AA2686E8A600DB3A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AE104AD2686E8A600DB3A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AE104AF2686E8A600DB3A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AEE09402694D9AD0077CFB5 /* ContactsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsController.swift; sourceTree = "<group>"; };
 		4AF59634268791BB009226D1 /* CaraDetaileControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaraDetaileControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1209AE26946A7A00D4299D /* Cosmos in Frameworks */,
 				4A46D0F82689B45A00A6E103 /* FirebaseFirestore in Frameworks */,
 				4AFBD8EA269045F400638BE6 /* IQKeyboardManagerSwift in Frameworks */,
 				4A46D0F22689B23300A6E103 /* FirebaseAnalytics in Frameworks */,
@@ -97,6 +101,7 @@
 				4A460E902687576400552B44 /* AutoViewCell.swift */,
 				4AF59634268791BB009226D1 /* CaraDetaileControllerViewController.swift */,
 				4AD1709126886D3E00C47EEC /* OrderController.swift */,
+				4AEE09402694D9AD0077CFB5 /* ContactsController.swift */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				4A46D0F12689B23300A6E103 /* FirebaseAnalytics */,
 				4A46D0F72689B45A00A6E103 /* FirebaseFirestore */,
 				4AFBD8E9269045F400638BE6 /* IQKeyboardManagerSwift */,
+				4A1209AD26946A7A00D4299D /* Cosmos */,
 			);
 			productName = carRental;
 			productReference = 4AE1049B2686E8A000DB3A63 /* carRental.app */;
@@ -213,6 +219,7 @@
 			packageReferences = (
 				4A5512872688F12A0036A713 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4AFBD8E8269045F300638BE6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				4A1209AC26946A7A00D4299D /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 4AE1049C2686E8A000DB3A63 /* Products */;
 			projectDirPath = "";
@@ -248,6 +255,7 @@
 				4AE1049F2686E8A000DB3A63 /* AppDelegate.swift in Sources */,
 				4AE104A92686E8A000DB3A63 /* carRental.xcdatamodeld in Sources */,
 				4AD1709226886D3E00C47EEC /* OrderController.swift in Sources */,
+				4AEE09412694D9AD0077CFB5 /* ContactsController.swift in Sources */,
 				4A460E912687576400552B44 /* AutoViewCell.swift in Sources */,
 				4A460E94268759B900552B44 /* ForCellModel.swift in Sources */,
 				4AF59635268791BB009226D1 /* CaraDetaileControllerViewController.swift in Sources */,
@@ -457,6 +465,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A1209AC26946A7A00D4299D /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.0.0;
+			};
+		};
 		4A5512872688F12A0036A713 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -476,6 +492,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A1209AD26946A7A00D4299D /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A1209AC26946A7A00D4299D /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
 		4A46D0F12689B23300A6E103 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4A5512872688F12A0036A713 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

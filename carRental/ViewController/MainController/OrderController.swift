@@ -138,7 +138,7 @@ class OrderController: UITableViewController {
             }
         }
         
-        for item in 0...2 {
+        for item in 0...6 {
             let updateReference = self.db.collection(Constants.FireBase.collectionName).document(String(item))
             updateReference.getDocument { (document, err) in
                 if let err = err {
@@ -153,6 +153,7 @@ class OrderController: UITableViewController {
                             Constants.FireBase.reserveFS: false
                             
                         ])
+                       
                     }
                 }
             }
